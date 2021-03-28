@@ -93,7 +93,13 @@ class _HomePageState extends State<HomePage> {
             itemCount: repositories.length,
             itemBuilder: (context, index) {
               final repository = repositories[index];
-              return Text(repository['name']);
+              return ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(repository['image']),
+                ),
+                title: Text(repository['name']),
+                subtitle: Text(repository['url']),
+              );
           });
         },
       )
