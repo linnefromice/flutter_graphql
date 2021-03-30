@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:linnefromice/pages/pokemon_page.dart';
 
 class PokemonsPage extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _State extends State<PokemonsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Flutter GraphQL - GraphQL Pokémon"),
+          title: Text("GraphQL Pokémon"),
         ),
         body: Query(
           options: QueryOptions(
@@ -58,6 +59,15 @@ class _State extends State<PokemonsPage> {
                     ),
                     title: Text(repository['name']),
                     subtitle: Text(repository['url']),
+                    trailing: IconButton(
+                      onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>
+                            PokemonPage(name: repository['name'])
+                        )
+                      ),
+                      icon: Icon(Icons.arrow_forward),
+                    ),
                   );
                 });
           },
