@@ -3,11 +3,11 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 
 void main() async {
   await initHiveForFlutter();
-  final HttpLink httpLink = HttpLink(
+  final httpLink = HttpLink(
     'https://graphql-pokeapi.vercel.app/api/graphql',
   );
   final Link link = httpLink;
-  ValueNotifier<GraphQLClient> client = ValueNotifier(
+  var client = ValueNotifier(
     GraphQLClient(
       link: link,
       cache: GraphQLCache(store: HiveStore())
@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
           },
           pollInterval: Duration(seconds: 10),
         ),
-        builder: (QueryResult result, { VoidCallback refetch, FetchMore fetchMore }) {
+        builder: (result, { refetch, fetchMore }) {
           if (result.hasException) {
             return Text(result.exception.toString());
           }
