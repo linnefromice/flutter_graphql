@@ -63,7 +63,11 @@ class _State extends State<PokemonPage> {
                   children: [
                     Text(pokemon["id"].toString()),
                     Text(pokemon["name"]),
-                    Text(pokemon["sprites"].toString()),
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(
+                        pokemon["sprites"]["front_default"]
+                      ),
+                    ),
                     Text(pokemon["moves"].toString()),
                     Text(pokemon["types"].toString()),
                   ],
