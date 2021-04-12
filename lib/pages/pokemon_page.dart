@@ -68,6 +68,7 @@ class _State extends State<PokemonPage> {
                       backgroundImage: NetworkImage(
                         pokemon["sprites"]["front_default"]
                       ),
+                      radius: 150,
                     ),
                     Text("TYPES"),
                     Column(
