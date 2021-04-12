@@ -60,6 +60,7 @@ class _State extends State<PokemonPage> {
             return Card(
               child: SingleChildScrollView(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(pokemon["id"].toString()),
                     Text(pokemon["name"]),
@@ -68,8 +69,18 @@ class _State extends State<PokemonPage> {
                         pokemon["sprites"]["front_default"]
                       ),
                     ),
-                    Text(pokemon["moves"].toString()),
-                    Text(pokemon["types"].toString()),
+                    Text("TYPES"),
+                    Column(
+                      children: List.generate(pokemon["types"].length, (index) {
+                        return Text(pokemon["types"][index]["type"]["name"]);
+                      }),
+                    ),
+                    Text("MOVES"),
+                    Column(
+                      children: List.generate(pokemon["moves"].length, (index) {
+                        return Text(pokemon["moves"][index]["move"]["name"]);
+                      }),
+                    ),
                   ],
                 ),
               ),
