@@ -60,12 +60,28 @@ class _State extends State<PokemonPage> {
             return Card(
               child: SingleChildScrollView(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(pokemon["id"].toString()),
                     Text(pokemon["name"]),
-                    Text(pokemon["sprites"].toString()),
-                    Text(pokemon["moves"].toString()),
-                    Text(pokemon["types"].toString()),
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(
+                        pokemon["sprites"]["front_default"]
+                      ),
+                      radius: 150,
+                    ),
+                    Text("TYPES"),
+                    Column(
+                      children: List.generate(pokemon["types"].length, (index) {
+                        return Text(pokemon["types"][index]["type"]["name"]);
+                      }),
+                    ),
+                    Text("MOVES"),
+                    Column(
+                      children: List.generate(pokemon["moves"].length, (index) {
+                        return Text(pokemon["moves"][index]["move"]["name"]);
+                      }),
+                    ),
                   ],
                 ),
               ),
