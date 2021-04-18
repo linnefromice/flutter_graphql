@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 import 'pages/pokemons_page.dart';
+import 'pages/star_wars_page.dart';
 
 void main() async {
   await initHiveForFlutter();
   final httpLink = HttpLink(
-    'https://graphql-pokeapi.vercel.app/api/graphql',
+    // 'https://graphql-pokeapi.vercel.app/api/graphql',
+    'https://swapi-graphql.netlify.app/.netlify/functions/index',
   );
   final Link link = httpLink;
   var client = ValueNotifier(
@@ -32,10 +34,9 @@ class App extends StatelessWidget {
       client: client,
       child: MaterialApp(
         title: 'Flutter Graphql',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: PokemonsPage(),
+        theme: ThemeData.light(),
+        darkTheme: ThemeData.dark(),
+        home: StarWarsPage(),
       ),
     );
   }

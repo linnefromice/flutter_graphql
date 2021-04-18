@@ -36,7 +36,7 @@ class _State extends State<PokemonsPage> {
             document: gql(readPokemons),
             variables: {
               'limit': 20,
-              'offset': 1,
+              'offset': 0,
             },
             pollInterval: Duration(seconds: 10),
           ),
