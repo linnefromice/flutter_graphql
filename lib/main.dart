@@ -32,9 +32,8 @@ class App extends StatelessWidget {
       client: client,
       child: MaterialApp(
         title: 'Flutter Graphql',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: ThemeData.light(),
+        darkTheme: ThemeData.dark(),
         home: PokemonsPage(),
       ),
     );
