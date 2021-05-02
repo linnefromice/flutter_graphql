@@ -10,7 +10,8 @@ part 'people_connection.g.dart';
 abstract class PeopleConnection with _$PeopleConnection {
   const factory PeopleConnection({
     List<Person>? people
-  }) = PeopleConnection;
+  }) = _PeopleConnection;
 
-  factory PeopleConnection.fromJson(Map<String, dynamic> json) => _$PeopleConnectionFromJson(json);
+  factory PeopleConnection.fromJson(Map<String, dynamic> json)
+    => _$PeopleConnectionFromJson(json);
 }

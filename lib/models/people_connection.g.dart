@@ -6,15 +6,16 @@ part of 'people_connection.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PeopleConnection _$_$PeopleConnectionFromJson(Map<String, dynamic> json) {
-  return _$PeopleConnection(
+_$_PeopleConnection _$_$_PeopleConnectionFromJson(Map<String, dynamic> json) {
+  return _$_PeopleConnection(
     people: (json['people'] as List<dynamic>?)
         ?.map((e) => Person.fromJson(e as Map<String, dynamic>))
         .toList(),
   );
 }
 
-Map<String, dynamic> _$_$PeopleConnectionToJson(_$PeopleConnection instance) =>
+Map<String, dynamic> _$_$_PeopleConnectionToJson(
+        _$_PeopleConnection instance) =>
     <String, dynamic>{
       'people': instance.people,
     };
