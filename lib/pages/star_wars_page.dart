@@ -35,7 +35,10 @@ class _State extends State<StarWarsPage> {
             variables: {},
             pollInterval: Duration(seconds: 10),
           ),
-          builder: (result, { refetch, fetchMore }) {
+          builder: (result, {
+            required refetch,
+            required fetchMore
+          }) {
             if (result.hasException) {
               return Text(result.exception.toString());
             }

@@ -4,20 +4,19 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'app_config.dart';
 
 class GraphQLApiClient {
-  GraphQLApiClient(final AppConfig config) {
+  ValueNotifier<GraphQLClient> graphQLClient;
+
+  GraphQLApiClient(final AppConfig config) :
     graphQLClient = ValueNotifier<GraphQLClient>(
       GraphQLClient(
         cache: GraphQLCache(store: HiveStore()),
         link: HttpLink(config.baseUrl),
       )
     );
-  }
-
-  ValueNotifier<GraphQLClient> graphQLClient;
 
   Future<QueryResult> query(
     String query, {
-      Map<String, dynamic> variables
+      required Map<String, dynamic> variables
   }) async {
     final result = await graphQLClient.value.query(QueryOptions(
       document: gql(query),
@@ -30,7 +29,7 @@ class GraphQLApiClient {
       for (final error in result.exception.graphqlErrors) {
         print(error.message);
       }
-      return result;
     }
+    return result;
   }
 }
