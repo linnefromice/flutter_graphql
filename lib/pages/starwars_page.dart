@@ -6,7 +6,7 @@ import '../core/graphql_client.dart';
 import '../repositories/people_connection_repository.dart';
 import '../view_models/starwars_model.dart';
 
-class StarWarsPage extends StatelessWidget {
+class StarwarsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<StarwarsModel>(
@@ -35,7 +35,7 @@ class _Body extends StatelessWidget {
 
   Widget _contents(BuildContext context) {
     final peopleConnection = context.select(
-      (model) => model.peopleConnection
+      (StarwarsModel model) => model.peopleConnection
     );
     if (peopleConnection == null) {
       return Center(child: CircularProgressIndicator());
