@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:linnefromice/pages/pokemon_page.dart';
+import 'pokemon_page.dart';
 
 class PokemonsPage extends StatefulWidget {
   @override

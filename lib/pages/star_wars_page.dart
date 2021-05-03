@@ -35,7 +35,7 @@ class _Body extends StatelessWidget {
 
   Widget _contents(BuildContext context) {
     final peopleConnection = context.select(
-      (StarwarsModel model) => model.peopleConnection
+      (model) => model.peopleConnection
     );
     if (peopleConnection == null) {
       return Center(child: CircularProgressIndicator());

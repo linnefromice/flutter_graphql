@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-import 'pages/pokemons_page.dart';
 import 'pages/star_wars_page.dart';
 
 void main() async {
