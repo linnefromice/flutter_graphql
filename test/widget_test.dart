@@ -7,13 +7,22 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 
 import 'package:linnefromice/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(App());
+    await tester.pumpWidget(App(client: ValueNotifier<GraphQLClient>(
+      GraphQLClient(
+        cache: GraphQLCache(store: HiveStore()),
+        link: HttpLink(
+          // 'https://graphql-pokeapi.vercel.app/api/graphql',
+          'https://swapi-graphql.netlify.app/.netlify/functions/index',
+        ),
+      )
+    )));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

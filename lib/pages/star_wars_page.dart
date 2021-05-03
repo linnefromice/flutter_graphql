@@ -1,66 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:linnefromice/pages/pokemon_page.dart';
+import 'package:provider/provider.dart';
 
-class StarWarsPage extends StatefulWidget {
+import '../view_models/starwars_model.dart';
+
+class StarWarsPage extends StatelessWidget {
   @override
-  _State createState() => _State();
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider<StarwarsModel>(
+      create: (_) => StarwarsModel(
+        context.read()
+      ),
+      child: _Body(),
+    );
+  }
 }
 
-class _State extends State<StarWarsPage> {
-  String readPersons = """
-    query {
-      allPeople {
-        people {
-          name
-          birthYear
-          gender
-          homeworld {
-            name
-          }
-        }
-      }
-    }
-  """;
-
+class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("GraphQL StarWars"),
-        ),
-        body: Query(
-          options: QueryOptions(
-            document: gql(readPersons),
-            variables: {},
-            pollInterval: Duration(seconds: 10),
-          ),
-          builder: (result, { refetch, fetchMore }) {
-            if (result.hasException) {
-              return Text(result.exception.toString());
-            }
-            if (result.isLoading) {
-              return Text('Loading');
-            }
+      appBar: AppBar(
+        title: Text("GraphQL StarWars"),
+      ),
+      body: _contents(context)
+    );
+  }
 
-            List repositories = result.data['allPeople']['people'];
-            return ListView.builder(
-              itemCount: repositories.length,
-              itemBuilder: (context, index) {
-                final repository = repositories[index];
-                return ListTile(
-                  title: Text(repository['name']),
-                  subtitle: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("${repository['birthYear']} / ${repository['gender']}"),
-                      Text(repository['homeworld']['name'])
-                    ],
-                  ),
-                );
-              });
-          },
-        )
+  Widget _contents(BuildContext context) {
+    final peopleConnection = context.select(
+      (StarwarsModel model) => model.peopleConnection
+    );
+    final persons = peopleConnection?.people;
+    if (persons == null) {
+      return Center(child: CircularProgressIndicator());
+    }
+    return ListView.builder(
+      itemCount: persons.length,
+      itemBuilder: (context, index) {
+        final person = persons[index];
+        return ListTile(
+          title: Text("${person.name}"),
+          subtitle: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("${person.birthYear} / ${person.gender}"),
+            ],
+          ),
+        );
+      }
     );
   }
 }
