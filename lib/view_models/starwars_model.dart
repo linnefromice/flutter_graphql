@@ -8,7 +8,7 @@ class StarwarsModel extends ChangeNotifier {
   }
 
   final PeopleConnectionRepository _peopleConnectionRepository;
-  PeopleConnection? peopleConnection;
+  PeopleConnection peopleConnection;
 
   Future<void> getPeopleConnection() async {
     peopleConnection = await _peopleConnectionRepository.getPeopleConnection();

@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../core/app_config.dart';
+import '../core/graphql_client.dart';
+import '../repositories/people_connection_repository.dart';
 import '../view_models/starwars_model.dart';
 
 class StarWarsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<StarwarsModel>(
-      create: (_) => StarwarsModel(
-        context.read()
+      create: (context) => StarwarsModel(
+        PeopleConnectionRepository(
+          GraphQLApiClient(
+            AppConfig(baseUrl: "https://swapi-graphql.netlify.app/.netlify/functions/index")
+          )
+        ),
       ),
       child: _Body(),
     );
@@ -30,10 +37,10 @@ class _Body extends StatelessWidget {
     final peopleConnection = context.select(
       (StarwarsModel model) => model.peopleConnection
     );
-    final persons = peopleConnection?.people;
-    if (persons == null) {
+    if (peopleConnection == null) {
       return Center(child: CircularProgressIndicator());
     }
+    final persons = peopleConnection.people;
     return ListView.builder(
       itemCount: persons.length,
       itemBuilder: (context, index) {

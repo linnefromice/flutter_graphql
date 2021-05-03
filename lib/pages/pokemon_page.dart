@@ -5,7 +5,7 @@ class PokemonPage extends StatefulWidget {
   // ignore: type_annotate_public_apis
   final name;
 
-  const PokemonPage({Key? key, this.name}) : super(key: key);
+  const PokemonPage({Key key, this.name}) : super(key: key);
 
   @override
   _State createState() => _State();
@@ -49,8 +49,8 @@ class _State extends State<PokemonPage> {
             pollInterval: Duration(seconds: 10),
           ),
           builder: (result, {
-            required refetch,
-            required fetchMore
+            refetch,
+            fetchMore
           }) {
             if (result.hasException) {
               return Text(result.exception.toString());

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'people_connection.dart';
 
@@ -8,10 +8,6 @@ part of 'people_connection.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
 PeopleConnection _$PeopleConnectionFromJson(Map<String, dynamic> json) {
   return _PeopleConnection.fromJson(json);
 }
@@ -20,28 +16,30 @@ PeopleConnection _$PeopleConnectionFromJson(Map<String, dynamic> json) {
 class _$PeopleConnectionTearOff {
   const _$PeopleConnectionTearOff();
 
-  _PeopleConnection call({List<Person>? people}) {
+// ignore: unused_element
+  _PeopleConnection call({List<Person> people}) {
     return _PeopleConnection(
       people: people,
     );
   }
 
+// ignore: unused_element
   PeopleConnection fromJson(Map<String, Object> json) {
     return PeopleConnection.fromJson(json);
   }
 }
 
 /// @nodoc
+// ignore: unused_element
 const $PeopleConnection = _$PeopleConnectionTearOff();
 
 /// @nodoc
 mixin _$PeopleConnection {
-  List<Person>? get people => throw _privateConstructorUsedError;
+  List<Person> get people;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
   @JsonKey(ignore: true)
-  $PeopleConnectionCopyWith<PeopleConnection> get copyWith =>
-      throw _privateConstructorUsedError;
+  $PeopleConnectionCopyWith<PeopleConnection> get copyWith;
 }
 
 /// @nodoc
@@ -49,7 +47,7 @@ abstract class $PeopleConnectionCopyWith<$Res> {
   factory $PeopleConnectionCopyWith(
           PeopleConnection value, $Res Function(PeopleConnection) then) =
       _$PeopleConnectionCopyWithImpl<$Res>;
-  $Res call({List<Person>? people});
+  $Res call({List<Person> people});
 }
 
 /// @nodoc
@@ -63,13 +61,10 @@ class _$PeopleConnectionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? people = freezed,
+    Object people = freezed,
   }) {
     return _then(_value.copyWith(
-      people: people == freezed
-          ? _value.people
-          : people // ignore: cast_nullable_to_non_nullable
-              as List<Person>?,
+      people: people == freezed ? _value.people : people as List<Person>,
     ));
   }
 }
@@ -81,7 +76,7 @@ abstract class _$PeopleConnectionCopyWith<$Res>
           _PeopleConnection value, $Res Function(_PeopleConnection) then) =
       __$PeopleConnectionCopyWithImpl<$Res>;
   @override
-  $Res call({List<Person>? people});
+  $Res call({List<Person> people});
 }
 
 /// @nodoc
@@ -97,19 +92,17 @@ class __$PeopleConnectionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? people = freezed,
+    Object people = freezed,
   }) {
     return _then(_PeopleConnection(
-      people: people == freezed
-          ? _value.people
-          : people // ignore: cast_nullable_to_non_nullable
-              as List<Person>?,
+      people: people == freezed ? _value.people : people as List<Person>,
     ));
   }
 }
 
-/// @nodoc
 @JsonSerializable()
+
+/// @nodoc
 class _$_PeopleConnection
     with DiagnosticableTreeMixin
     implements _PeopleConnection {
@@ -119,7 +112,7 @@ class _$_PeopleConnection
       _$_$_PeopleConnectionFromJson(json);
 
   @override
-  final List<Person>? people;
+  final List<Person> people;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -158,15 +151,14 @@ class _$_PeopleConnection
 }
 
 abstract class _PeopleConnection implements PeopleConnection {
-  const factory _PeopleConnection({List<Person>? people}) = _$_PeopleConnection;
+  const factory _PeopleConnection({List<Person> people}) = _$_PeopleConnection;
 
   factory _PeopleConnection.fromJson(Map<String, dynamic> json) =
       _$_PeopleConnection.fromJson;
 
   @override
-  List<Person>? get people => throw _privateConstructorUsedError;
+  List<Person> get people;
   @override
   @JsonKey(ignore: true)
-  _$PeopleConnectionCopyWith<_PeopleConnection> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$PeopleConnectionCopyWith<_PeopleConnection> get copyWith;
 }

@@ -16,7 +16,7 @@ class GraphQLApiClient {
 
   Future<QueryResult> query(
     String query, {
-      required Map<String, dynamic> variables
+      Map<String, dynamic> variables
   }) async {
     final result = await graphQLClient.value.query(QueryOptions(
       document: gql(query),

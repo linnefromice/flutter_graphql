@@ -8,7 +8,7 @@ class PeopleConnectionRepository {
 
   Future<PeopleConnection> getPeopleConnection() async {
     final result = await _client.query(query, variables: {});
-    return PeopleConnection.fromJson(result.data);
+    return PeopleConnection.fromJson(result.data["allPeople"]);
   }
 }
 

@@ -41,8 +41,8 @@ class _State extends State<PokemonsPage> {
             pollInterval: Duration(seconds: 10),
           ),
           builder: (result, {
-            required refetch,
-            required fetchMore
+            refetch,
+            fetchMore
           }) {
             if (result.hasException) {
               return Text(result.exception.toString());

@@ -26,8 +26,8 @@ class App extends StatelessWidget {
   final ValueNotifier<GraphQLClient> client;
 
   const App({
-    Key? key,
-    required this.client
+    Key key,
+    this.client
   }) : super(key: key);
 
   // This widget is the root of your application.
