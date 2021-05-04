@@ -18,7 +18,7 @@ class PokemonRepository {
 }
 
 const String query = """
-query {
+query pokemon(\$name: String!){
   pokemon(name: \$name) {
     id
     name
