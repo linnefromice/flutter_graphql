@@ -17,12 +17,20 @@ class _$PokemonTearOff {
   const _$PokemonTearOff();
 
 // ignore: unused_element
-  _Pokemon call({int id, String name, int height, int weight}) {
+  _Pokemon call(
+      {int id,
+      String name,
+      int height,
+      int weight,
+      List<Type> types,
+      Sprite sprites}) {
     return _Pokemon(
       id: id,
       name: name,
       height: height,
       weight: weight,
+      types: types,
+      sprites: sprites,
     );
   }
 
@@ -42,6 +50,8 @@ mixin _$Pokemon {
   String get name;
   int get height;
   int get weight;
+  List<Type> get types;
+  Sprite get sprites;
 
   Map<String, dynamic> toJson();
   @JsonKey(ignore: true)
@@ -52,7 +62,15 @@ mixin _$Pokemon {
 abstract class $PokemonCopyWith<$Res> {
   factory $PokemonCopyWith(Pokemon value, $Res Function(Pokemon) then) =
       _$PokemonCopyWithImpl<$Res>;
-  $Res call({int id, String name, int height, int weight});
+  $Res call(
+      {int id,
+      String name,
+      int height,
+      int weight,
+      List<Type> types,
+      Sprite sprites});
+
+  $SpriteCopyWith<$Res> get sprites;
 }
 
 /// @nodoc
@@ -69,13 +87,27 @@ class _$PokemonCopyWithImpl<$Res> implements $PokemonCopyWith<$Res> {
     Object name = freezed,
     Object height = freezed,
     Object weight = freezed,
+    Object types = freezed,
+    Object sprites = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
       name: name == freezed ? _value.name : name as String,
       height: height == freezed ? _value.height : height as int,
       weight: weight == freezed ? _value.weight : weight as int,
+      types: types == freezed ? _value.types : types as List<Type>,
+      sprites: sprites == freezed ? _value.sprites : sprites as Sprite,
     ));
+  }
+
+  @override
+  $SpriteCopyWith<$Res> get sprites {
+    if (_value.sprites == null) {
+      return null;
+    }
+    return $SpriteCopyWith<$Res>(_value.sprites, (value) {
+      return _then(_value.copyWith(sprites: value));
+    });
   }
 }
 
@@ -84,7 +116,16 @@ abstract class _$PokemonCopyWith<$Res> implements $PokemonCopyWith<$Res> {
   factory _$PokemonCopyWith(_Pokemon value, $Res Function(_Pokemon) then) =
       __$PokemonCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String name, int height, int weight});
+  $Res call(
+      {int id,
+      String name,
+      int height,
+      int weight,
+      List<Type> types,
+      Sprite sprites});
+
+  @override
+  $SpriteCopyWith<$Res> get sprites;
 }
 
 /// @nodoc
@@ -102,12 +143,16 @@ class __$PokemonCopyWithImpl<$Res> extends _$PokemonCopyWithImpl<$Res>
     Object name = freezed,
     Object height = freezed,
     Object weight = freezed,
+    Object types = freezed,
+    Object sprites = freezed,
   }) {
     return _then(_Pokemon(
       id: id == freezed ? _value.id : id as int,
       name: name == freezed ? _value.name : name as String,
       height: height == freezed ? _value.height : height as int,
       weight: weight == freezed ? _value.weight : weight as int,
+      types: types == freezed ? _value.types : types as List<Type>,
+      sprites: sprites == freezed ? _value.sprites : sprites as Sprite,
     ));
   }
 }
@@ -116,7 +161,8 @@ class __$PokemonCopyWithImpl<$Res> extends _$PokemonCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Pokemon with DiagnosticableTreeMixin implements _Pokemon {
-  const _$_Pokemon({this.id, this.name, this.height, this.weight});
+  const _$_Pokemon(
+      {this.id, this.name, this.height, this.weight, this.types, this.sprites});
 
   factory _$_Pokemon.fromJson(Map<String, dynamic> json) =>
       _$_$_PokemonFromJson(json);
@@ -129,10 +175,14 @@ class _$_Pokemon with DiagnosticableTreeMixin implements _Pokemon {
   final int height;
   @override
   final int weight;
+  @override
+  final List<Type> types;
+  @override
+  final Sprite sprites;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Pokemon(id: $id, name: $name, height: $height, weight: $weight)';
+    return 'Pokemon(id: $id, name: $name, height: $height, weight: $weight, types: $types, sprites: $sprites)';
   }
 
   @override
@@ -143,7 +193,9 @@ class _$_Pokemon with DiagnosticableTreeMixin implements _Pokemon {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('height', height))
-      ..add(DiagnosticsProperty('weight', weight));
+      ..add(DiagnosticsProperty('weight', weight))
+      ..add(DiagnosticsProperty('types', types))
+      ..add(DiagnosticsProperty('sprites', sprites));
   }
 
   @override
@@ -157,7 +209,11 @@ class _$_Pokemon with DiagnosticableTreeMixin implements _Pokemon {
             (identical(other.height, height) ||
                 const DeepCollectionEquality().equals(other.height, height)) &&
             (identical(other.weight, weight) ||
-                const DeepCollectionEquality().equals(other.weight, weight)));
+                const DeepCollectionEquality().equals(other.weight, weight)) &&
+            (identical(other.types, types) ||
+                const DeepCollectionEquality().equals(other.types, types)) &&
+            (identical(other.sprites, sprites) ||
+                const DeepCollectionEquality().equals(other.sprites, sprites)));
   }
 
   @override
@@ -166,7 +222,9 @@ class _$_Pokemon with DiagnosticableTreeMixin implements _Pokemon {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(height) ^
-      const DeepCollectionEquality().hash(weight);
+      const DeepCollectionEquality().hash(weight) ^
+      const DeepCollectionEquality().hash(types) ^
+      const DeepCollectionEquality().hash(sprites);
 
   @JsonKey(ignore: true)
   @override
@@ -180,8 +238,13 @@ class _$_Pokemon with DiagnosticableTreeMixin implements _Pokemon {
 }
 
 abstract class _Pokemon implements Pokemon {
-  const factory _Pokemon({int id, String name, int height, int weight}) =
-      _$_Pokemon;
+  const factory _Pokemon(
+      {int id,
+      String name,
+      int height,
+      int weight,
+      List<Type> types,
+      Sprite sprites}) = _$_Pokemon;
 
   factory _Pokemon.fromJson(Map<String, dynamic> json) = _$_Pokemon.fromJson;
 
@@ -193,6 +256,10 @@ abstract class _Pokemon implements Pokemon {
   int get height;
   @override
   int get weight;
+  @override
+  List<Type> get types;
+  @override
+  Sprite get sprites;
   @override
   @JsonKey(ignore: true)
   _$PokemonCopyWith<_Pokemon> get copyWith;
