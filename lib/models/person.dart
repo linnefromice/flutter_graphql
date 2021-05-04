@@ -7,12 +7,12 @@ part 'person.g.dart';
 @freezed
 abstract class Person with _$Person {
   const factory Person({
-    String? id,
-    String? name,
-    String? birthYear,
-    String? gender,
-    String? created,
-    String? edited,
+    String id,
+    String name,
+    String birthYear,
+    String gender,
+    String created,
+    String edited,
   }) = _Person;
 
   factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);

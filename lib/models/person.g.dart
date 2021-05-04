@@ -8,12 +8,12 @@ part of 'person.dart';
 
 _$_Person _$_$_PersonFromJson(Map<String, dynamic> json) {
   return _$_Person(
-    id: json['id'] as String?,
-    name: json['name'] as String?,
-    birthYear: json['birthYear'] as String?,
-    gender: json['gender'] as String?,
-    created: json['created'] as String?,
-    edited: json['edited'] as String?,
+    id: json['id'] as String,
+    name: json['name'] as String,
+    birthYear: json['birthYear'] as String,
+    gender: json['gender'] as String,
+    created: json['created'] as String,
+    edited: json['edited'] as String,
   );
 }
 

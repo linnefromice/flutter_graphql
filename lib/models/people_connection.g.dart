@@ -8,9 +8,10 @@ part of 'people_connection.dart';
 
 _$_PeopleConnection _$_$_PeopleConnectionFromJson(Map<String, dynamic> json) {
   return _$_PeopleConnection(
-    people: (json['people'] as List<dynamic>?)
-        ?.map((e) => Person.fromJson(e as Map<String, dynamic>))
-        .toList(),
+    people: (json['people'] as List)
+        ?.map((e) =>
+            e == null ? null : Person.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 

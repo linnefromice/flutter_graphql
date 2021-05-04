@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'person.dart';
 
@@ -8,10 +8,6 @@ part of 'person.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
 Person _$PersonFromJson(Map<String, dynamic> json) {
   return _Person.fromJson(json);
 }
@@ -20,13 +16,14 @@ Person _$PersonFromJson(Map<String, dynamic> json) {
 class _$PersonTearOff {
   const _$PersonTearOff();
 
+// ignore: unused_element
   _Person call(
-      {String? id,
-      String? name,
-      String? birthYear,
-      String? gender,
-      String? created,
-      String? edited}) {
+      {String id,
+      String name,
+      String birthYear,
+      String gender,
+      String created,
+      String edited}) {
     return _Person(
       id: id,
       name: name,
@@ -37,26 +34,28 @@ class _$PersonTearOff {
     );
   }
 
+// ignore: unused_element
   Person fromJson(Map<String, Object> json) {
     return Person.fromJson(json);
   }
 }
 
 /// @nodoc
+// ignore: unused_element
 const $Person = _$PersonTearOff();
 
 /// @nodoc
 mixin _$Person {
-  String? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get birthYear => throw _privateConstructorUsedError;
-  String? get gender => throw _privateConstructorUsedError;
-  String? get created => throw _privateConstructorUsedError;
-  String? get edited => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get birthYear;
+  String get gender;
+  String get created;
+  String get edited;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
   @JsonKey(ignore: true)
-  $PersonCopyWith<Person> get copyWith => throw _privateConstructorUsedError;
+  $PersonCopyWith<Person> get copyWith;
 }
 
 /// @nodoc
@@ -64,12 +63,12 @@ abstract class $PersonCopyWith<$Res> {
   factory $PersonCopyWith(Person value, $Res Function(Person) then) =
       _$PersonCopyWithImpl<$Res>;
   $Res call(
-      {String? id,
-      String? name,
-      String? birthYear,
-      String? gender,
-      String? created,
-      String? edited});
+      {String id,
+      String name,
+      String birthYear,
+      String gender,
+      String created,
+      String edited});
 }
 
 /// @nodoc
@@ -82,38 +81,20 @@ class _$PersonCopyWithImpl<$Res> implements $PersonCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? birthYear = freezed,
-    Object? gender = freezed,
-    Object? created = freezed,
-    Object? edited = freezed,
+    Object id = freezed,
+    Object name = freezed,
+    Object birthYear = freezed,
+    Object gender = freezed,
+    Object created = freezed,
+    Object edited = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      birthYear: birthYear == freezed
-          ? _value.birthYear
-          : birthYear // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gender: gender == freezed
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as String?,
-      created: created == freezed
-          ? _value.created
-          : created // ignore: cast_nullable_to_non_nullable
-              as String?,
-      edited: edited == freezed
-          ? _value.edited
-          : edited // ignore: cast_nullable_to_non_nullable
-              as String?,
+      id: id == freezed ? _value.id : id as String,
+      name: name == freezed ? _value.name : name as String,
+      birthYear: birthYear == freezed ? _value.birthYear : birthYear as String,
+      gender: gender == freezed ? _value.gender : gender as String,
+      created: created == freezed ? _value.created : created as String,
+      edited: edited == freezed ? _value.edited : edited as String,
     ));
   }
 }
@@ -124,12 +105,12 @@ abstract class _$PersonCopyWith<$Res> implements $PersonCopyWith<$Res> {
       __$PersonCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? id,
-      String? name,
-      String? birthYear,
-      String? gender,
-      String? created,
-      String? edited});
+      {String id,
+      String name,
+      String birthYear,
+      String gender,
+      String created,
+      String edited});
 }
 
 /// @nodoc
@@ -143,44 +124,27 @@ class __$PersonCopyWithImpl<$Res> extends _$PersonCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? birthYear = freezed,
-    Object? gender = freezed,
-    Object? created = freezed,
-    Object? edited = freezed,
+    Object id = freezed,
+    Object name = freezed,
+    Object birthYear = freezed,
+    Object gender = freezed,
+    Object created = freezed,
+    Object edited = freezed,
   }) {
     return _then(_Person(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      birthYear: birthYear == freezed
-          ? _value.birthYear
-          : birthYear // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gender: gender == freezed
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as String?,
-      created: created == freezed
-          ? _value.created
-          : created // ignore: cast_nullable_to_non_nullable
-              as String?,
-      edited: edited == freezed
-          ? _value.edited
-          : edited // ignore: cast_nullable_to_non_nullable
-              as String?,
+      id: id == freezed ? _value.id : id as String,
+      name: name == freezed ? _value.name : name as String,
+      birthYear: birthYear == freezed ? _value.birthYear : birthYear as String,
+      gender: gender == freezed ? _value.gender : gender as String,
+      created: created == freezed ? _value.created : created as String,
+      edited: edited == freezed ? _value.edited : edited as String,
     ));
   }
 }
 
-/// @nodoc
 @JsonSerializable()
+
+/// @nodoc
 class _$_Person with DiagnosticableTreeMixin implements _Person {
   const _$_Person(
       {this.id,
@@ -194,17 +158,17 @@ class _$_Person with DiagnosticableTreeMixin implements _Person {
       _$_$_PersonFromJson(json);
 
   @override
-  final String? id;
+  final String id;
   @override
-  final String? name;
+  final String name;
   @override
-  final String? birthYear;
+  final String birthYear;
   @override
-  final String? gender;
+  final String gender;
   @override
-  final String? created;
+  final String created;
   @override
-  final String? edited;
+  final String edited;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -267,28 +231,28 @@ class _$_Person with DiagnosticableTreeMixin implements _Person {
 
 abstract class _Person implements Person {
   const factory _Person(
-      {String? id,
-      String? name,
-      String? birthYear,
-      String? gender,
-      String? created,
-      String? edited}) = _$_Person;
+      {String id,
+      String name,
+      String birthYear,
+      String gender,
+      String created,
+      String edited}) = _$_Person;
 
   factory _Person.fromJson(Map<String, dynamic> json) = _$_Person.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String? get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String? get birthYear => throw _privateConstructorUsedError;
+  String get birthYear;
   @override
-  String? get gender => throw _privateConstructorUsedError;
+  String get gender;
   @override
-  String? get created => throw _privateConstructorUsedError;
+  String get created;
   @override
-  String? get edited => throw _privateConstructorUsedError;
+  String get edited;
   @override
   @JsonKey(ignore: true)
-  _$PersonCopyWith<_Person> get copyWith => throw _privateConstructorUsedError;
+  _$PersonCopyWith<_Person> get copyWith;
 }
