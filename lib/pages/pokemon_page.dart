@@ -52,9 +52,17 @@ class _Body extends StatelessWidget {
             Text(pokemon.id.toString()),
             Text(pokemon.name),
             CircleAvatar(
-              backgroundImage: NetworkImage(""),
+              backgroundImage: NetworkImage(
+                pokemon.sprites.front_default
+              ),
               radius: 150,
-            )
+            ),
+            Text("TYPES"),
+            Column(
+              children: List.generate(pokemon.types.length, (index) {
+                return Text(pokemon.types[index].type.name);
+              }),
+            ),
           ],
         ),
       ),
