@@ -1,0 +1,12 @@
+query allPeople {
+  allPeople {
+    people {
+      name
+      birthYear
+      gender
+      homeworld {
+        name
+      }
+    }
+  }
+}

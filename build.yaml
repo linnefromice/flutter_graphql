@@ -1,0 +1,15 @@
+targets:
+  $default:
+    sources:
+      - lib/**
+      - schemas/**
+    builders:
+      artemis:
+        options:
+          schema_mapping:
+            - schema: schemas/graphql-pokeapi.graphql
+              queries_glob: lib/queries/pokeapi/**.query.graphql
+              output: lib/queries/query_pokeapi.dart
+            - schema: schemas/swapi.graphql
+              queries_glob: lib/queries/swapi/**.query.graphql
+              output: lib/queries/query_swapi.dart

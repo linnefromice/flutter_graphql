@@ -1,0 +1,14 @@
+query {
+  pokemons {
+    count
+    next
+    previous
+    status
+    message
+    results {
+      url
+      name
+      image
+    }
+  }
+}
