@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-import 'pages/pokemons_page.dart';
-import 'pages/starwars_page.dart';
+import 'pages/home_page.dart';
 
 void main() async {
   await initHiveForFlutter();
@@ -39,7 +38,7 @@ class App extends StatelessWidget {
         title: 'Flutter Graphql',
         theme: ThemeData.light(),
         darkTheme: ThemeData.dark(),
-        home: PokemonsPage(),
+        home: HomePage(),
       ),
     );
   }
