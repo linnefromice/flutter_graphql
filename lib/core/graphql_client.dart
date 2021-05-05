@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import "package:gql/ast.dart" as ast;
 
 import 'app_config.dart';
 
@@ -20,6 +21,25 @@ class GraphQLApiClient {
   }) async {
     final result = await graphQLClient.value.query(QueryOptions(
       document: gql(query),
+      variables: variables,
+    ));
+
+    if (result.exception != null) {
+      // エラー処理
+      print(result.exception);
+      for (final error in result.exception.graphqlErrors) {
+        print(error.message);
+      }
+    }
+    return result;
+  }
+
+  Future<QueryResult> queryDocumentNode(
+    ast.DocumentNode document, {
+      Map<String, dynamic> variables
+  }) async {
+    final result = await graphQLClient.value.query(QueryOptions(
+      document: document,
       variables: variables,
     ));
 
