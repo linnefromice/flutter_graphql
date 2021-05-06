@@ -8,12 +8,12 @@ import 'package:gql/ast.dart';
 part 'query_pokeapi.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class QueryPokeapi$Query$PokemonList$PokemonItem with EquatableMixin {
-  QueryPokeapi$Query$PokemonList$PokemonItem();
+class Pokemons$Query$PokemonList$PokemonItem with EquatableMixin {
+  Pokemons$Query$PokemonList$PokemonItem();
 
-  factory QueryPokeapi$Query$PokemonList$PokemonItem.fromJson(
+  factory Pokemons$Query$PokemonList$PokemonItem.fromJson(
           Map<String, dynamic> json) =>
-      _$QueryPokeapi$Query$PokemonList$PokemonItemFromJson(json);
+      _$Pokemons$Query$PokemonList$PokemonItemFromJson(json);
 
   String url;
 
@@ -24,15 +24,15 @@ class QueryPokeapi$Query$PokemonList$PokemonItem with EquatableMixin {
   @override
   List<Object> get props => [url, name, image];
   Map<String, dynamic> toJson() =>
-      _$QueryPokeapi$Query$PokemonList$PokemonItemToJson(this);
+      _$Pokemons$Query$PokemonList$PokemonItemToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class QueryPokeapi$Query$PokemonList with EquatableMixin {
-  QueryPokeapi$Query$PokemonList();
+class Pokemons$Query$PokemonList with EquatableMixin {
+  Pokemons$Query$PokemonList();
 
-  factory QueryPokeapi$Query$PokemonList.fromJson(Map<String, dynamic> json) =>
-      _$QueryPokeapi$Query$PokemonListFromJson(json);
+  factory Pokemons$Query$PokemonList.fromJson(Map<String, dynamic> json) =>
+      _$Pokemons$Query$PokemonListFromJson(json);
 
   int count;
 
@@ -44,25 +44,25 @@ class QueryPokeapi$Query$PokemonList with EquatableMixin {
 
   String message;
 
-  List<QueryPokeapi$Query$PokemonList$PokemonItem> results;
+  List<Pokemons$Query$PokemonList$PokemonItem> results;
 
   @override
   List<Object> get props => [count, next, previous, status, message, results];
-  Map<String, dynamic> toJson() => _$QueryPokeapi$Query$PokemonListToJson(this);
+  Map<String, dynamic> toJson() => _$Pokemons$Query$PokemonListToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class QueryPokeapi$Query with EquatableMixin {
-  QueryPokeapi$Query();
+class Pokemons$Query with EquatableMixin {
+  Pokemons$Query();
 
-  factory QueryPokeapi$Query.fromJson(Map<String, dynamic> json) =>
-      _$QueryPokeapi$QueryFromJson(json);
+  factory Pokemons$Query.fromJson(Map<String, dynamic> json) =>
+      _$Pokemons$QueryFromJson(json);
 
-  QueryPokeapi$Query$PokemonList pokemons;
+  Pokemons$Query$PokemonList pokemons;
 
   @override
   List<Object> get props => [pokemons];
-  Map<String, dynamic> toJson() => _$QueryPokeapi$QueryToJson(this);
+  Map<String, dynamic> toJson() => _$Pokemons$QueryToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -296,15 +296,14 @@ class Pokemon$Query with EquatableMixin {
   Map<String, dynamic> toJson() => _$Pokemon$QueryToJson(this);
 }
 
-class QueryPokeapiQuery
-    extends GraphQLQuery<QueryPokeapi$Query, JsonSerializable> {
-  QueryPokeapiQuery();
+class PokemonsQuery extends GraphQLQuery<Pokemons$Query, JsonSerializable> {
+  PokemonsQuery();
 
   @override
   final DocumentNode document = DocumentNode(definitions: [
     OperationDefinitionNode(
         type: OperationType.query,
-        name: null,
+        name: NameNode(value: 'pokemons'),
         variableDefinitions: [],
         directives: [],
         selectionSet: SelectionSetNode(selections: [
@@ -374,13 +373,13 @@ class QueryPokeapiQuery
   ]);
 
   @override
-  final String operationName = 'query_pokeapi';
+  final String operationName = 'pokemons';
 
   @override
   List<Object> get props => [document, operationName];
   @override
-  QueryPokeapi$Query parse(Map<String, dynamic> json) =>
-      QueryPokeapi$Query.fromJson(json);
+  Pokemons$Query parse(Map<String, dynamic> json) =>
+      Pokemons$Query.fromJson(json);
 }
 
 @JsonSerializable(explicitToJson: true)

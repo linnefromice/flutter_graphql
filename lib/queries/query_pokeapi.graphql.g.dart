@@ -6,26 +6,26 @@ part of 'query_pokeapi.graphql.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-QueryPokeapi$Query$PokemonList$PokemonItem
-    _$QueryPokeapi$Query$PokemonList$PokemonItemFromJson(
+Pokemons$Query$PokemonList$PokemonItem
+    _$Pokemons$Query$PokemonList$PokemonItemFromJson(
         Map<String, dynamic> json) {
-  return QueryPokeapi$Query$PokemonList$PokemonItem()
+  return Pokemons$Query$PokemonList$PokemonItem()
     ..url = json['url'] as String
     ..name = json['name'] as String
     ..image = json['image'] as String;
 }
 
-Map<String, dynamic> _$QueryPokeapi$Query$PokemonList$PokemonItemToJson(
-        QueryPokeapi$Query$PokemonList$PokemonItem instance) =>
+Map<String, dynamic> _$Pokemons$Query$PokemonList$PokemonItemToJson(
+        Pokemons$Query$PokemonList$PokemonItem instance) =>
     <String, dynamic>{
       'url': instance.url,
       'name': instance.name,
       'image': instance.image,
     };
 
-QueryPokeapi$Query$PokemonList _$QueryPokeapi$Query$PokemonListFromJson(
+Pokemons$Query$PokemonList _$Pokemons$Query$PokemonListFromJson(
     Map<String, dynamic> json) {
-  return QueryPokeapi$Query$PokemonList()
+  return Pokemons$Query$PokemonList()
     ..count = json['count'] as int
     ..next = json['next'] as String
     ..previous = json['previous'] as String
@@ -34,13 +34,13 @@ QueryPokeapi$Query$PokemonList _$QueryPokeapi$Query$PokemonListFromJson(
     ..results = (json['results'] as List)
         ?.map((e) => e == null
             ? null
-            : QueryPokeapi$Query$PokemonList$PokemonItem.fromJson(
+            : Pokemons$Query$PokemonList$PokemonItem.fromJson(
                 e as Map<String, dynamic>))
         ?.toList();
 }
 
-Map<String, dynamic> _$QueryPokeapi$Query$PokemonListToJson(
-        QueryPokeapi$Query$PokemonList instance) =>
+Map<String, dynamic> _$Pokemons$Query$PokemonListToJson(
+        Pokemons$Query$PokemonList instance) =>
     <String, dynamic>{
       'count': instance.count,
       'next': instance.next,
@@ -50,15 +50,15 @@ Map<String, dynamic> _$QueryPokeapi$Query$PokemonListToJson(
       'results': instance.results?.map((e) => e?.toJson())?.toList(),
     };
 
-QueryPokeapi$Query _$QueryPokeapi$QueryFromJson(Map<String, dynamic> json) {
-  return QueryPokeapi$Query()
+Pokemons$Query _$Pokemons$QueryFromJson(Map<String, dynamic> json) {
+  return Pokemons$Query()
     ..pokemons = json['pokemons'] == null
         ? null
-        : QueryPokeapi$Query$PokemonList.fromJson(
+        : Pokemons$Query$PokemonList.fromJson(
             json['pokemons'] as Map<String, dynamic>);
 }
 
-Map<String, dynamic> _$QueryPokeapi$QueryToJson(QueryPokeapi$Query instance) =>
+Map<String, dynamic> _$Pokemons$QueryToJson(Pokemons$Query instance) =>
     <String, dynamic>{
       'pokemons': instance.pokemons?.toJson(),
     };
