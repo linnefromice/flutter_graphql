@@ -1,10 +1,9 @@
-import 'package:linnefromice/models/base_name.dart';
-import 'package:linnefromice/models/sprite.dart';
-import 'package:linnefromice/queries/query_pokeapi.dart';
-
 import '../core/graphql_client.dart';
+import '../models/base_name.dart';
 import '../models/pokemon.dart';
+import '../models/sprite.dart';
 import '../models/type.dart';
+import '../queries/query_pokeapi.dart';
 
 class PokemonRepository {
   PokemonRepository(this._client);
